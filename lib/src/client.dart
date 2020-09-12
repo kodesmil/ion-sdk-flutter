@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:events2/events2.dart';
-import 'package:flutter_webrtc/webrtc.dart';
+import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:protoo_client/protoo_client.dart';
 import 'package:sdp_transform/sdp_transform.dart' as sdpTransform;
 import 'package:uuid/uuid.dart';

@@ -1,5 +1,5 @@
 import 'package:events2/events2.dart';
-import 'package:flutter_webrtc/webrtc.dart';
+import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'logger.dart' show Logger;
 
 // 'vga': {'minWidth': '640', 'minHeight': '360'},
@@ -25,7 +25,7 @@ class Stream extends EventEmitter {
       quality = 'hd']) async {
     if (sender) {
       if (screen) {
-        this._stream = await navigator
+        this._stream = await MediaDevices
             .getDisplayMedia(_buildMediaConstraints(false, true));
       } else {
         Map<String, dynamic> videoConstrains = {
@@ -40,7 +40,7 @@ class Stream extends EventEmitter {
             "echoCancellation": true,
             "noiseSuppression": true,
         };
-        this._stream = await navigator
+        this._stream = await MediaDevices
             .getUserMedia(_buildMediaConstraints(audioConstrains, videoConstrains));
       }
     }
